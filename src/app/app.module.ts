@@ -7,7 +7,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
-import { HttpClientModule } from '@angular/common/http';  // <-Add here
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './product/product.component';  // <-Add here
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { HttpClientModule } from '@angular/common/http';  // <-Add here
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    BrowserModule,
+    StorageServiceModule
   ],    
   providers: [],
   bootstrap: [AppComponent]
