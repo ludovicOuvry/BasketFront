@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { SessionStorageServiceService } from '../session-storage-service.service';
 import { Observable } from 'rxjs';
 
 @Component( {
@@ -8,10 +8,18 @@ import { Observable } from 'rxjs';
     styleUrls: ['./product.component.scss']
 } )
 export class ProductComponent implements OnInit {
-
-    constructor() { }
+tab = [];
+    constructor(private storage: SessionStorageServiceService) { }
 
     ngOnInit() {
+       // console.clear();
+        this.storage.remplir();
+        
+        this.tab =this.storage.getproduct();
+        console.log("YEST");
+        console.log("nombre de Produit:"+this.tab.length+this.tab[0])
+        
+        
     }
 
 }
