@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//import {Product} from './product/product.component';
 
 @Injectable( {
     providedIn: 'root'
@@ -13,8 +14,11 @@ export class DataService {
     }
 
     getProduct() {
-        return this.http.get('http://localhost:8080/')  // ne fonctionne pas  Erreur dans le JSOn cote BAck 
+        return this.http.get('http://localhost:8080/')
     }
-}
+    postProduct(url : string, s:string){
+            return  this.http.post(url,s);
+        }
+    }
 
 
