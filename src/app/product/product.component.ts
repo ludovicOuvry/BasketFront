@@ -13,7 +13,6 @@ import {Product} from './product';
 
 export class ProductComponent implements OnInit {
     tab: Product[];
-    jsontab: Product[];
     constructor( private storage: SessionStorageServiceService, private data: DataService ) { }
 
     ngOnInit() {
@@ -22,14 +21,13 @@ export class ProductComponent implements OnInit {
         
         this.tab = this.storage.getproduct();
         console.log( "YEST" );
-        console.log( "nombre de Produit:" + this.tab.length + this.tab[0] );
+        console.log( "nombre de Produit:" + this.tab.length);
         
-        this.data.getProduct().subscribe(
-            data => this.jsontab = data);
         
-       
-        
-        this.data.postProduct(this.tab[0]);
+    }
+    
+    valide(){
+        this.data.valide(this.tab);
     }
 
 }

@@ -7,13 +7,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';  // <-Add here
 import { StorageServiceModule} from 'angular-webstorage-service';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    ProductComponent
+    ProductComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
