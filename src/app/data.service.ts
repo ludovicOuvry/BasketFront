@@ -12,22 +12,24 @@ const httpOptions = {
 
 
 export class DataService {
+    url:string = "http://localhost:8080/"
 
     constructor( private http: HttpClient ) { }
-   
-
-    getUsers() {
-        return this.http.get( 'https://jsonplaceholder.typicode.com/users' )
-    }
 
     getProduct() {
-        return this.http.get<Product[]>('http://localhost:8080/');
+        return this.http.get<Product[]>(this.url);
     }
-    postProduct(url : string, p:Product){
-            return  this.http.post(url,p,httpOptions).subscribe(result => {
+    postProduct(p:Product){
+            return  this.http.post(this.url+"create",p,httpOptions).subscribe(result => {
                 console.log(result);
             }, error => console.log('There was an error: '));
         }
+    
+    fini(p:Product[]){
+        return  this.http.post(this.url+"fini",p,httpOptions).subscribe(result => {
+            console.log(result);
+        }, error => console.log('There was an error: '));
+    }
     }
 
 

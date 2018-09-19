@@ -27,7 +27,9 @@ export class ProductComponent implements OnInit {
         this.data.getProduct().subscribe(
             data => this.jsontab = data);
         
-        this.data.postProduct("http://localhost:8080/create",this.tab[0]);
+       
+        
+        this.data.postProduct(this.tab[0]);
     }
 
 }
