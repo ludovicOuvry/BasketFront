@@ -19,7 +19,7 @@ export class SessionStorageServiceService {
                 "compagny":"IKEA",
                 "price":21
             };
-        this.storage.set("0",JSON.stringify(produit));
+        this.storage.set("0",produit);
         
          produit = {
                 "id":1,
@@ -28,7 +28,7 @@ export class SessionStorageServiceService {
                 "price":10
             };
         
-        this.storage.set("1",JSON.stringify(produit));
+        this.storage.set("1",produit);
                 
     }
     
