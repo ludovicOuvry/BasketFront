@@ -17,9 +17,9 @@ export class ProductComponent implements OnInit {
 
     ngOnInit() {
         // console.clear();
-        this.storage.remplir();
+         this.storage.remplir();
         
-        this.tab = this.storage.getproduct();
+         this.tab = this.storage.getproduct();
         console.log( "YEST" );
         console.log( "nombre de Produit:" + this.tab.length);
         
@@ -27,7 +27,13 @@ export class ProductComponent implements OnInit {
     }
     
     valide(){
+      //  this.data.valide(this.tab);
         this.data.valide(this.tab);
     }
+    
+    post(){
+        //  this.data.valide(this.tab);
+          this.data.post(this.tab);
+      }
 
 }
