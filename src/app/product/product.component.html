@@ -1,7 +1,10 @@
 <h1>Produits</h1>
 <ul>
-	<li *ngFor="let pro of tab">
-	{{ pro }}</li>
+	<li *ngFor="let product of this.storage.getproduct()">
+	{{ product.name }} -- {{product.compagny}}  prix:  {{product.price}} qte:   {{product.quantity}}
+	<button (click)="plus(product.id)">+</button>
+	<button (click)="moins(product.id)">-</button></li>
+	 
 </ul>
 
 <button (click)="valide()">Valider</button>

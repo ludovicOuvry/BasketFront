@@ -3,4 +3,5 @@ export interface Product {
     name: String;
     compagny: String;
     price: Number;
+    quantity:Number;
   }
