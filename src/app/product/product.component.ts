@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionStorageServiceService } from '../session-storage-service.service';
 import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
+import {Product} from './product';
 
 @Component( {
     selector: 'app-product',
@@ -11,14 +12,14 @@ import { DataService } from '../data.service';
 
 
 export class ProductComponent implements OnInit {
-    tab = [];
-    jsontab: Object;
+    tab: Product[];
+    jsontab: Product[];
     constructor( private storage: SessionStorageServiceService, private data: DataService ) { }
 
     ngOnInit() {
         // console.clear();
         this.storage.remplir();
-
+        
         this.tab = this.storage.getproduct();
         console.log( "YEST" );
         console.log( "nombre de Produit:" + this.tab.length + this.tab[0] );
@@ -30,12 +31,3 @@ export class ProductComponent implements OnInit {
     }
 
 }
-
-/*export class Product {
-    id: number;
-    name: string;
-    compagny: string;
-    price: number;
-}*/
-
-
