@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from './product/Product';
+import {environment} from '../environments/environment';
 
 const httpOptions = {
     headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
@@ -12,7 +13,7 @@ const httpOptions = {
 
 
 export class DataService {
-    url: string = "http://localhost:8080/"
+    url: string = environment.baseUrl
 
     constructor( private http: HttpClient ) { }
 

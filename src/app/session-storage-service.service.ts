@@ -41,10 +41,9 @@ export class SessionStorageServiceService {
     }
 
     public plus( id: Number ) {
-        console.log( "plus : "id)
-        let p: Product = this.storage.get( id );
-        p.quantity++;
-        this.storage.set( id, p );
+        let p: Product = this.storage.get(id+"");    
+        p.quantity = p.quantity+1; 
+        this.storage.set(id, p);
     }
 
     public moins( id: Number ) {
@@ -54,5 +53,4 @@ export class SessionStorageServiceService {
             this.storage.set( p.id, p );
         }
     }
-}
 }
