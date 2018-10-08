@@ -35,22 +35,29 @@ export class SessionStorageServiceService {
     }
 
     public getproduct() {
-        this.array[0] = this.storage.get( "0" );
-        this.array[1] = this.storage.get( "1" );
+        let i = 0;
+        let clees[] : [];
+        Object.keys( this.storage ).forEach( key => cles = this.storage[key] );
+        let cles = Object.keys( cles );
+        console.log( cles );
+        for ( let cle of cles ) {
+            this.array[i]=this.storage.get(cle);
+            i++;
+        }
         return this.array;
     }
 
-    public plus( id: Number ) {
-        let p: Product = this.storage.get(id+"");    
-        p.quantity = p.quantity+1; 
-        this.storage.set(id, p);
-    }
+    public plus( id: number ) {
+    let p: Product = this.storage.get( id + "" );
+    p.quantity = p.quantity + 1;
+    this.storage.set( id + "", p );
+}
 
-    public moins( id: Number ) {
-        let p: Product = this.storage.get( id );
-        if ( p.quantity > 0 ) {
-            p.quantity--;
-            this.storage.set( p.id, p );
-        }
+    public moins( id: number ) {
+    let p: Product = this.storage.get( id + "" );
+    if ( p.quantity > 0 ) {
+        p.quantity--;
+        this.storage.set( p.id + "", p );
     }
+}
 }

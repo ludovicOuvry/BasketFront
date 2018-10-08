@@ -29,13 +29,13 @@ export class ProductComponent implements OnInit {
     post() {
         this.data.post( this.tab );
     }
-    plus( id: Number ) {
+    plus( id: number ) {
         console.log( "+" + id );
         this.storage.plus(id);
 
     }
 
-    moins( id: Number ) {
+    moins( id: number ) {
         this.storage.moins(id);
     }
 
