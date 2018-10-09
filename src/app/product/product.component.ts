@@ -13,7 +13,7 @@ import { Product } from './product';
 
 export class ProductComponent implements OnInit {
     tab: Product[] = []
-    constructor( private storage: SessionStorageServiceService, private data: DataService ) { }
+    constructor( public storage: SessionStorageServiceService, private data: DataService ) { }
 
     ngOnInit() {
         // console.clear();
