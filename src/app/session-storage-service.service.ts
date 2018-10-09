@@ -35,13 +35,13 @@ export class SessionStorageServiceService {
     }
 
     public getproduct() {
-        let i = 0;
-        let cles = [];
+        let i = 0
+        let clees[] : [];
         Object.keys( this.storage ).forEach( key => cles = this.storage[key] );
-        let cle = Object.keys( cles );
+        let cles = Object.keys( cles );
         console.log( cles );
-        for ( let cl of cles ) {
-            this.array[i]=this.storage.get(cl);
+        for ( let cle of cles ) {
+            this.array[i]=this.storage.get(cle);
             i++;
         }
         return this.array;
