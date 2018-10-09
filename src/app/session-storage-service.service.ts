@@ -35,7 +35,7 @@ export class SessionStorageServiceService {
     }
 
     public getproduct() {
-        let i = 0;
+        let i = 0
         let clees[] : [];
         Object.keys( this.storage ).forEach( key => cles = this.storage[key] );
         let cles = Object.keys( cles );
