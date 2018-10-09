@@ -1,4 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
   baseUrl: 'https://basketback:3306'
 };
