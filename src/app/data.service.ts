@@ -20,7 +20,7 @@ export class DataService {
     valide( p: Product[] ) {
         return this.http.post( this.url + "valide", p, httpOptions ).subscribe( result => {
             console.log( result );
-        }, error => console.log( 'There was an error: ' ) );
+        }, error => console.log( 'There was an error: '+this.url) );
     }
     
     
